@@ -1,6 +1,6 @@
 <h2>These are all the current Trainers in Pokenatra</h2>
 <% @trainer.each do |trainer| %>
-  <div class="trainers"><%= trainer.name %></div>
+  <a href="/trainer/<%= trainer.id %>"><div class="trainers"><%= trainer.name %></div></a>
   <img class="trainer_pic" src="<%= trainer.img_url %>" alt="<%= trainer.name %>">
   <p>Please click on the trainer for more detail</p>
 <% end %>

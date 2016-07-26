@@ -20,13 +20,29 @@ get '/home' do
   erb :home
 end  
 
+# List out all the pokemon
 get '/pokemon' do
   @pokemon = Pokemon.all
-  erb :"pokemon/all_pokemon"
+  erb :"pokemon/index"
 end
 
+# Individual pages for pokemon
+get '/pokemon/:id' do
+  @pokemon = Pokemon.find(params[:id])
+  erb :"pokemon/show"
+end
+
+# List out all trainers
 get '/trainer' do
   @trainer = Trainer.all
-  erb :'trainers/all_trainers'
+  erb :'trainers/index'
 end
+
+# Individual page for the trainer
+get '/trainer/:id' do
+  @trainer = Trainer.find(params[:id])
+  @pokemon = Pokemon.where(trainer_id: params[:id])
+  erb :"trainers/show"
+end
+
 

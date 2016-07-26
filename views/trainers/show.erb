@@ -1,0 +1,8 @@
+<h2>Trainer <%= @trainer.name %></h2>
+<img src="<%= @trainer.img_url %>" class="trainer_pic" alt="<%= @trainer.name %>">
+<div class="trainer_info">This trainer's Level is: <%= @trainer.power_level %></div>
+<div class="trainer_infor">This trainer's pokemon are: </div>
+<% @pokemon.each do |pokemon| %>
+  <div><%= pokemon.name %></div>
+  <img src="<%= pokemon.img_url %>" class="pokemon_pic" alt="<%= pokemon.name %>">
+<% end %>
