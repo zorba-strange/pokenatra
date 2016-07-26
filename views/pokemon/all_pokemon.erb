@@ -1,0 +1,6 @@
+<h2>These are all of the Pokemon in Pokenatra</h2>
+<% @pokemon.each do |pokemon| %>
+  <div class="pokemon"><%= pokemon.name %></div>
+  <img class="pokemon_pic" src="<%= pokemon.img_url %>" alt="<%= pokemon.name %>">
+  <p>Please Click the Pokemon for more detail</p>
+<% end %>
